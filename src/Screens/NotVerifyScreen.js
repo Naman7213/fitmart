@@ -1,5 +1,6 @@
 import { View, Text, Box, Center, Image, VStack,Button } from "native-base";
 import React from "react";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 function NotVerifyScreen() {
   return (
@@ -8,7 +9,8 @@ function NotVerifyScreen() {
         <Image source={require("../../assets/favicon.png")} alt="Logo" size="lg"/>
       </Center>
       <VStack space={6} px={5} alignItems="center">
-        <Button>Register</Button>
+        <Button bg={Colors.black} >Register</Button>
+        <Button bg={Colors.black} >Login</Button>
       </VStack>
     </Box>
   );
