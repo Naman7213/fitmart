@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject":"expo eject "
+    "eject": "expo eject "
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.7",
@@ -26,6 +26,7 @@
     "react-native-svg": "^13.9.0",
     "react-native-swipe-list-view": "^3.2.9",
     "react-native-tab-view": "^3.5.1",
+    "react-native-unordered-list": "^1.0.4",
     "react-native-web": "^0.19.4"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ import HomeProducts from "../Components/HomeProducts";
 function HomeScreen() {
   return (
 
-    <Box flex={1} bg="#EEFAE6">
+    <Box flex={1} bg={Colors.black}>
       <HomeSearch />
       <HomeProducts />
 
