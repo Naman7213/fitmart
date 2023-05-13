@@ -3,16 +3,17 @@ import { Text, View, Box, Pressable, HStack, Center } from "native-base";
 import { SwipeListView } from "react-native-swipe-list-view";
 import products from "../Products";
 import { render } from "react-dom";
+// import colors from "native-base/lib/typescript/theme/base/colors";
 
 const Swiper = () => {
   <SwipeListView
     rightOpenValue={-50}
-    previewRowKey={0}
+    previewRowKey="0"
     previewOpenValue={-40}
     previewOpenDelay={3000}
-    data={products.slice(0, 2)}
+    data={products.slice(0,2)}
+    renderItem={renderItems} 
     rendeerHiddenItems={renderHiddenItems}
-    renderItem={renderItems}
     showsVerticalScrollIndicator={false}
   />;
 };
@@ -27,7 +28,13 @@ const renderItems = (data) => {
         rounded={10}
         overflow="hidden"
       >
-        <Text>Items</Text>
+        <center w="25%" bg={colors.deepGray}>
+          <Image source={{uri:data.item.image}} alt={data.item.name}
+          w="full"
+          h={24} 
+          resizeMode="contains" 
+          />
+        </center>
       </HStack>
     </Box>
   </Pressable>;
