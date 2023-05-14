@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useWindowDimensions } from "react-native";
+import { useWindowDimensions , StyleSheet } from "react-native";
 import { SceneMap } from "react-native-tab-view";
 import Orders from "./Orders";
 import Profile from "./Profile";
@@ -33,15 +33,14 @@ export default function Tabs() {
       activeColor={Colors.main}
       inactiveColor={Colors.white}
       renderLabel={({ route, color }) => (
-        <Text style={{ color, ...styles.text }}>{route.title}</Text>
+      <Text style={{ color, ...styles.text }}>{route.title}</Text>
       )}
     />
   );
 
   return (
     <TabView
-      navigation
-      State={{ index, routes }}
+      navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={{ width: layout.width }}

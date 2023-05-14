@@ -1,4 +1,4 @@
-import { Box, FormControl, Input, ScrollView, VStack } from "native-base";
+import { Box, FormControl, Input, ScrollView, VStack,Buttone } from "native-base";
 import React from "react";
 import Colors from "../../color";
 
@@ -12,8 +12,12 @@ const Inputs = [
     type: "text",
   },
   {
-    label: "PASSWORD",
-    type: "text",
+    label: "NEW PASSWORD",
+    type: "password",
+  },
+  {
+    label: "CONFIRM PASSWORD",
+    type: "password",
   },
 ];
 
@@ -33,8 +37,9 @@ const Profile = () => {
                 {i.label}
               </FormControl.Label>
               <Input
-                borderWidth={0}
+                borderWidth={0.2}
                 bg={Colors.subGreen}
+                borderColor={Colors.main}
                 py={4}
                 type={i.type}
                 color={Colors.main}
@@ -47,29 +52,11 @@ const Profile = () => {
               />
             </FormControl>
           ))}
-          {/* <FormControl>
-            <FormControl.Label
-              _text={{
-                fontSize: "12px",
-                fontWeight: "bold",
-              }}
-            >
-              USERNAME
-            </FormControl.Label>
-            <Input
-              borderWidth={0}
-              bg={Colors.subGreen}
-              py={3}
-              color={Colors.main}
-              fontSize={15}
-              _focus={{
-                bg: Colors.subGreen,
-                borderColor: Colors.main,
-                borderWidth: 1,
-              }}
-            />
-          </FormControl> */}
+          <Buttone bg={Colors.main} color={Colors.white}>
+          UPDATE PROFILE
+        </Buttone>
         </VStack>
+        
       </ScrollView>
     </Box>
   );
