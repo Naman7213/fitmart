@@ -1,6 +1,3 @@
-import { View, Text } from "native-base";
-import React from "react";
-
 import {
   Box,
   Center,
@@ -9,26 +6,31 @@ import {
   Text,
   Input,
   VStack,
+  HStack,
+  Spacer,
+  View,
+  Image,
 } from "native-base";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import React from "react";
 import Colors from "../color";
 import Buttone from "../Components/Buttone";
-const ShippingInputs = [
+const paymentMethodes = [
   {
-    label: "ENTER CITY",
-    type: "text",
+    image: require("../../assets/paypal.png"),
+    alt: "paypal",
+    icon: "Ionicons",
   },
   {
-    label: "ENTER COUNTRY",
-    type: "text",
+    image: require("../../assets/discover.png"),
+    alt: "discover",
+    icon: "fontAwesome",
   },
   {
-    label: "ENTER POSTAL CODE",
-    type: "text",
-  },
-  {
-    label: "ENTER ADDRESS",
-    type: "text",
+    image: require("../../assets/googlepay.png"),
+    alt: "googlepay",
+    icon: "fontAwesome",
   },
 ];
 
@@ -48,29 +50,48 @@ function PaymentScreen() {
       <Box h="full" bg={Colors.subGreen} px={5}>
         <ScrollView shows VerticalScrollIndicator={false}>
           <VStack space={6} mt={5}>
-            <HStack
-              alignItems="center"
-              bg={Colors.white}
-              px={3}
-              py={1}
-              justifyContent=
-              rounded={10}
-            >
-              <Box>
-                <Image
-                  source={require("../../assets/images/paypal.png")}
-                  alt="paypal"
-                  resizeMode="contain"
-                  W={60}
-                  h={50}
-                />
-              </Box>{" "}
-              I
-            </HStack>
+            {paymentMethodes.map((i, index) => (
+              <HStack
+                key={index}
+                alignItems="center"
+                bg={Colors.white}
+                px={9}
+                py={1}
+                justifyContent="space-between"
+                rounded={10}
+              >
+                <Box>
+                  <Image
+                    source={i.image}
+                    alt={i.alt}
+                    resizeMode="contain"
+                    W={60}
+                    h={50}
+                  />
+                  <Spacer />
+                </Box>
+                {i.icon === "Ionicons" ? (
+                  <Ionicons
+                    name="checkmark-circle"
+                    size={30}
+                    color={Colors.main}
+                  />
+                ) : (
+                  <FontAwesome
+                    name="circle-thin"
+                    size={30}
+                    color={Colors.main}
+                  />
+                )}
+              </HStack>
+            ))}
 
             <Buttone bg={Colors.main} color={Colors.white} mt={5}>
               CONTINUE
             </Buttone>
+            <Text italic textAlign="center">
+              Payment Method is <Text bold>Paypal</Text> by default
+            </Text>
           </VStack>
         </ScrollView>
       </Box>
