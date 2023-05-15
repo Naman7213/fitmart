@@ -1,9 +1,9 @@
 const products = [
   {
     _id: "1",
-    name: "Men’s Wander Sleeveless",
+    name: "Men's Wander Sleeveless",
     description:
-      "Put simply, warm-weather exploration is better in lightweight, moisture-wicking clothes. The 94% recycled Men’s Wander Sleeveless features moisture-wicking FlashDry™ and 6% elastane for extra stretch.",
+      "Put simply, warm-weather exploration is better in lightweight, moisture-wicking clothes. The 94% recycled Men's Wander Sleeveless features moisture-wicking FlashDry™ and 6% elastane for extra stretch.",
     price: 400,
     image:
       "https://images.thenorthface.com/is/image/TheNorthFace/NF0A7QNN_JK3_hero?wid=1300&hei=1510&fmt=jpeg&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0",
@@ -13,7 +13,7 @@ const products = [
   },
   {
     _id: "2",
-    name: "Women’s Midline Bra",
+    name: "Women's Midline Bra",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     price: 380,
